@@ -1,0 +1,233 @@
+
+{% extends 'base.html' %}
+
+
+{% block body %} 
+<!-- ALL HTML WILL GO HERE -->
+<header class="">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+                    <a href="/"><img src="{{ url_for('static', filename ='images/logo.png')}}" alt="" class="img-fluid" height="350px" width="350px" ></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ url_for('home')}}">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('cars')}}">Cars</a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('contact')}}">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="page-heading header-text">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1><small>{{car.name}}</small> &nbsp; <sup>R</sup>{{car.price}}</h1>
+        <span>
+          Physical Viewing by Appointment Only
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <div>
+          <img src="{{car.image_one}}" alt="" class="img-fluid wc-image" >
+        </div>
+
+        <br>
+
+        <div class="row">
+          <div class="col-sm-4 col-6">
+            <div>
+              <img src="{{car.image_one}}" alt="" class="img-fluid">
+            </div>
+            <br>
+          </div>
+          <div class="col-sm-4 col-6">
+            <div>
+              <img src="{{car.image_two}}" alt="" class="img-fluid">
+            </div>
+            <br>
+          </div>
+          <div class="col-sm-4 col-6">
+            <div>
+              <img src="{{car.image_three}}" alt="" class="img-fluid">
+            </div>
+            <br>
+          </div>
+
+          <div class="col-sm-4 col-6">
+            <div>
+              <img src="{{car.image_four}}" alt="" class="img-fluid">
+            </div>
+            <br>
+          </div>
+
+        </div>
+
+        <br>
+      </div>
+
+      <div class="col-md-5">
+        <form action="#" method="post" class="form">
+          <ul class="list-group list-group-flush">
+           <li class="list-group-item">
+                <div class="clearfix">
+                     <span class="pull-left">Type</span>
+
+                     <strong class="pull-right">Used vehicle</strong>
+                </div>
+           </li>
+
+           <li class="list-group-item">
+                <div class="clearfix">
+                     <span class="pull-left">Make</span>
+
+                     <strong class="pull-right">{{car.name}}</strong>
+                </div>
+           </li>
+
+           <li class="list-group-item">
+                <div class="clearfix">
+                     <span class="pull-left"> Model</span>
+
+                     <strong class="pull-right">{{car.model}}</strong>
+                </div>
+           </li>
+
+           <li class="list-group-item">
+                <div class="clearfix">
+                     <span class="pull-left">Mileage</span>
+
+                     <strong class="pull-right">{{car.mileage}} km</strong>
+                </div>
+           </li>
+
+           <li class="list-group-item">
+                <div class="clearfix">
+                     <span class="pull-left">Fuel</span>
+
+                     <strong class="pull-right">Petrol</strong>
+                </div>
+           </li>
+
+
+           <li class="list-group-item">
+                <div class="clearfix">
+                     <span class="pull-left">Gearbox</span>
+
+                     <strong class="pull-right">Manual</strong>
+                </div>
+           </li>
+
+  
+
+      
+
+           <li class="list-group-item">
+                <div class="clearfix">
+                     <span class="pull-left">Color</span>
+
+                     <strong class="pull-right">Black</strong>
+                </div>
+           </li>
+          </ul>
+        </form>
+
+        <br>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col-md-8">
+        <div class="tabs-content">
+          <h4>Vehicle Description</h4>
+
+          <p>- Colour coded bumpers<br>- Tinted glass<br>- Immobiliser<br>- Central locking - remote<br>- Passenger airbag<br>- Electric windows<br>- Rear head rests<br>- Radio<br>- CD player<br>- Ideal first car<br>- Warranty<br>- High level brake light<br></p>
+
+          <br>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="tabs-content">
+          <h4>Sales Contact Details</h4>
+
+          <p>
+            <span>Name</span>
+          
+            <br>
+          
+            <strong>Joel Ngwenya</strong>
+          </p>
+          
+          <!-- <p>
+            <span>Phone</span>
+          
+            <br>
+            
+            <strong>
+              <a href="tel:123-456-789">011-456-789</a>
+            </strong>
+          </p> -->
+          
+          <p>
+            <span>Mobile phone</span>
+          
+            <br>
+            
+            <strong>
+              <a href="tel:784499072">(+27) 784499072</a>
+            </strong>
+          </p>
+          
+          <p>
+            <span>Email</span>
+          
+            <br>
+            
+            <strong>
+              <a href="mailto:jessy@gmail.com">jessy@gmail.com</a>
+            </strong>
+          </p>
+        </div>
+
+        <br>
+        <br>
+
+
+
+        <br>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+
+  
+    
+
+{% endblock %}

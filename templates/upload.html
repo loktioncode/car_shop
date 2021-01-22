@@ -1,0 +1,161 @@
+
+{% extends 'base.html' %}
+
+ 
+
+{% block body %} 
+<!-- ALL HTML WILL GO HERE -->
+
+<header class="">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+                      <a href="/"><img src="{{ url_for('static', filename ='images/logo.png')}}" alt="" class="img-fluid" height="350px" width="350px" ></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" name="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('home')}}">Home
+             
+              </a>
+            </li>
+            <li class="nav-item  active">
+              <a class="nav-link" href="{{ url_for('cars')}}">Cars</a>
+              <span class="sr-only">(current)</span>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('home')}}">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div style="height: 250px; background-color:#232323;  padding: 230px 0px 150px 0px;
+  color: #fff;
+  position: relative;" >
+
+  <div style=" padding-left: 300px; padding-right:300px">
+    {% if message %}
+    <div class="alert alert-success alert-dismissable" role="alert" >
+  
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+  
+            <span aria-hnameden="true">x</span>
+  
+        </button>
+    {{message}}
+    </div>
+    {% endif %}
+  </div>
+
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Post Car</h1>
+            
+          </div>
+        </div>
+      </div>
+
+ 
+  </div>
+
+
+  <div >
+    <form action="{{url_for('upload')}}" method="POST" name="contact">
+        <div class="column" style="padding-left:180px; padding-right:180px; padding-top: 60px">
+            
+
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">Name/Make</label>
+                <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="name" placeholder="Mazda, VW, Bmw">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="model" class="col-sm-2 col-form-label">Model</label>
+                <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="model" placeholder="...">
+                </div>
+              </div>
+
+
+              <div class="form-group row">
+                <label for="mileage" class="col-sm-2 col-form-label">Mileage</label>
+                <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="mileage" placeholder="...">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="transmission" class="col-sm-2 col-form-label">Transmission</label>
+                <div class="col-sm-10">
+            
+                  <select class="form-control"  name="transmission" >
+                    <option value="1">auto</option>
+                    <option value="2">manual</option>
+                 
+               </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="mileage" class="col-sm-2 col-form-label">Asking Price</label>
+                <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="price" placeholder="...">
+                </div>
+              </div>
+
+
+              <div class="form-group row">
+                <label for="mileage" class="col-sm-2 col-form-label">Main Image</label>
+                <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="image1" placeholder="https://....">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="mileage" class="col-sm-2 col-form-label">Image 1</label>
+                <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="image2" placeholder="https://....">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="mileage" class="col-sm-2 col-form-label">Image 2</label>
+                <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="image3" placeholder="https://....">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="mileage" class="col-sm-2 col-form-label">Image 3</label>
+                <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="image4" placeholder="https://....">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="mileage" class="col-sm-2 col-form-label">Image 4</label>
+                <div class="col-sm-10">
+                  <input required type="text" class="form-control" name="image5" placeholder="https://....">
+                </div>
+              </div>
+
+
+        
+
+        
+        <div class="col-sm-4 offset-sm-4">
+            <button type="submit" name="form-submit" class="btn">Post Vehicle</button>
+        </div>
+        <br>
+        <br>
+      </form>
+
+  </div>
+
+
+{% endblock %}
+    

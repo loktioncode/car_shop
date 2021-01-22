@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+
+
+{% block body %} 
+
+
+
+    <!-- Page Content -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <div class="logo mr-auto row" >
+              <!-- Uncomment below if you prefer to use an image logo -->
+              <a href="/"><img src="{{ url_for('static', filename ='images/logo.png')}}" alt="" class="img-fluid" height="350px" width="350px" ></a>
+     
+             <!-- <h1 style="color: #fff; padding-top:1.5em" class="text-light"><a href="index.html">Mesulink Dynamics Group</a></h1> -->
+             
+            
+           </div>
+            <!--               <a href="/"><img src="{{ url_for('static', filename ='images/logo.png')}}" alt="" class="img-fluid" height="350px" width="350px" ></a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{ url_for('home')}}">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('cars')}}">Cars</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('contact')}}">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <!-- Banner Starts Here -->
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+          <!-- Item -->
+          <div class="item item-1">
+            <div class="img-fill">
+                <div class="text-content">
+                  <!-- <h6>Welcome to Royal Car Traders</h6> -->
+                  <h4>Featured Repossessed and Used Cars <br> For Sale on Auction</h4>
+                  <p>Private and Bank Repossessed Cars For Sale in South Africa.</p>
+                  <a href="cars.html" class="filled-button">Cars</a>
+                </div>
+            </div>
+          </div>
+          <!-- // Item -->
+          <!-- Item -->
+          <div class="item item-2">
+            <div class="img-fill">
+                <div class="text-content">
+                  <h4>When It Comes To Used Cars There is No Better Place to Search For Your Next Vehicle</h4>
+                  <p>Enjoy Royal Car Traders hassle-free sales experience when you purchase your next used car.</p>
+               
+                  <a href="about.html" class="filled-button">About Us</a>
+                </div>
+            </div>
+          </div>
+          <!-- // Item -->
+          <!-- Item -->
+          <div class="item item-3">
+            <div class="img-fill">
+                <div class="text-content">
+                  <h4>In this fast-paced digital age, car hunting needn't be the time-consuming task it once was.</h4>
+                  <p>With royal car Traders, we've changed the way people buy cars. </p>
+                  
+                  <a href="contact.html" class="filled-button">Contact Us</a>
+                </div>
+            </div>
+          </div>
+          <!-- // Item -->
+        </div>
+    </div>
+    <!-- Banner Ends Here -->
+
+    <div class="request-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <h4>Request a call back right now ?</h4>
+
+          </div>
+          <div class="col-md-4">
+            <a href="contact.html" class="border-button">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Featured <em>Cars</em></h2>
+              <span>Exclusive New Car Deals</span>
+            </div>
+          </div>
+
+       
+
+          {% for car in cars %}
+          <div class="col-md-4">
+            <div class="service-item">
+              <img src="{{car.image_one}}" alt="" /> 
+              <div class="down-content">
+                <h4>{{car.name}}</h4>
+                <div >
+                  <span>
+                      <sup>R</sup>{{car.price}}
+                  </span>
+                </div>
+
+                <p>
+                  <i class="fa fa-dashboard"></i> {{car.mileage}} &nbsp;&nbsp;&nbsp;
+                  <i class="fa fa-cube"></i> {{car.model}} &nbsp;&nbsp;&nbsp;
+                 
+                </p>
+                <a href="{{ url_for('show_car', postID=car.id ) }}" class="filled-button">View More</a>
+              </div>
+            </div>
+            
+            <br>
+          </div>
+
+          {% endfor %}
+
+        </div>
+
+   
+        </div>
+      </div>
+    </div>
+
+
+    <div class="testimonials">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>What they say <em>about us</em></h2>
+              <span>testimonials from our greatest clients</span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="owl-testimonials owl-carousel">
+              
+              
+              <div class="testimonial-item">
+                <div class="inner-content">
+                  <h4>John Smith</h4>
+                  <span>Market Specialist</span>
+                  <p>"Royal Car Traders helped me get my dream car hassle free."</p>
+                </div>
+                <!-- <img src="http://placehold.it/60x60" alt=""> -->
+              </div>
+              
+              <div class="testimonial-item">
+                <div class="inner-content">
+                  <h4>David Wood</h4>
+                  <span>Accountant</span>
+                  <p>"One of the most secure & safe place to get an affordable vehicle"</p>
+                </div>
+                <!-- <img src="http://placehold.it/60x60" alt=""> -->
+              </div>
+              
+              <div class="testimonial-item">
+                <div class="inner-content">
+                  <h4>Joel Ngwenya</h4>
+                  <span>Engineer</span>
+                  <p>"I loved the whole car buying process. Thanky you Royal Car Traders"</p>
+                </div>
+                <!-- <img src="http://placehold.it/60x60" alt=""> -->
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+{% endblock %}
