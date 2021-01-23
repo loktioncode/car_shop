@@ -1445,12 +1445,3 @@ h5 a {
 h5 a:hover {
   color: inherit;
 }
-
-/* The grid: Four equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 100%;
-  padding: 10px;
-}
-
-/* Style the images inside the grid */
