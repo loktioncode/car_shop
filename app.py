@@ -77,6 +77,16 @@ def cars():
 @app.route('/login', methods=['POST', 'GET'])
 def login():
 
+    details = ["royalcartraders@gmail.com", "@Password123"]
+    if request.method == 'POST':
+        name = request.form.get('name')
+        password = request.form.get('pass')
+        if name == details[0]:
+            if password == details[1]:
+                return render_template('upload.html', message='Logged In Succsessfully')
+            else:
+                return render_template('login.html', message='Wrong Email or Password')
+
     return render_template('login.html')
 
 
