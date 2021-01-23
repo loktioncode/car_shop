@@ -44,17 +44,6 @@ class Car(db.Model):
         return '<Car {}>'.format(self.model)
 
 
-class User(db.Model):
-    id = Column(Integer, primary_key=True)
-    name = Column(String(50))
-    email = Column(String(50))
-    role = Column(Integer)
-    password = Column(String(50))
-
-    def __repr__(self):
-        return '<User {}>'.format(self.name)
-
-
 @app.route('/')
 def home():
     cars = Car.query.limit(6).all()
@@ -83,6 +72,12 @@ def contact():
 def cars():
     cars = Car.query.all()
     return render_template('cars.html', cars=cars)
+
+
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+
+    return render_template('login.html')
 
 
 @app.route('/upload', methods=['POST', 'GET'])
